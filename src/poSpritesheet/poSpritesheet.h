@@ -64,7 +64,7 @@ namespace po {
 			bool rotated;
 			bool trimmed;
 			ci::Rectf spriteSourceSize;
-			ci::Vec2f sourceSize;
+			ci::vec2 sourceSize;
 		};
 		
 		//
