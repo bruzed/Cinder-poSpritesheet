@@ -19,11 +19,17 @@ class SpritesheetAnimationApp : public App {
 	
 	po::SpritesheetRef mSpritesheet;
 	po::SpritesheetAnimationRef mSpritesheetAnimation;
+	
+	Anim<vec2> mPos;
+	vec2 mEndPos;
 };
 
 void SpritesheetAnimationApp::setup()
 {
 	setWindowSize(1024, 768);
+	
+	mPos = vec2(1024, 0);
+	mEndPos = vec2(0, 768);
 	
 	gl::TextureRef texture = gl::Texture::create(loadImage(loadAsset("charge.png")));
 	JsonTree json = JsonTree(loadAsset("charge.json"));
@@ -32,11 +38,13 @@ void SpritesheetAnimationApp::setup()
 	mSpritesheetAnimation = po::SpritesheetAnimation::create(mSpritesheet);
 	mSpritesheetAnimation->setIsLoopingEnabled(true);
 	mSpritesheetAnimation->play();
+	
+	timeline().apply(&mPos, mEndPos, 15.0f).loop();
 }
-
 
 void SpritesheetAnimationApp::mouseDown( MouseEvent event )
 {
+	
 }
 
 void SpritesheetAnimationApp::update()
@@ -48,7 +56,8 @@ void SpritesheetAnimationApp::draw()
 {
 	gl::clear(Color::gray(0.2));
 	gl::pushModelView();
-	gl::translate(getWindowWidth()/2 - mSpritesheet->getOriginalBounds().getWidth()/2, getWindowHeight()/2 - mSpritesheet->getOriginalBounds().getHeight()/2);
+	ci::vec2 val = mPos.value();
+	gl::translate(val.x - mSpritesheet->getOriginalBounds().getWidth()/2, val.y - mSpritesheet->getOriginalBounds().getHeight()/2);
 	mSpritesheetAnimation->draw();
 	gl::popModelView();
 }
