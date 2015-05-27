@@ -47,7 +47,10 @@ void SpritesheetAnimationApp::update()
 void SpritesheetAnimationApp::draw()
 {
 	gl::clear(Color::gray(0.2));
+	gl::pushModelView();
+	gl::translate(getWindowWidth()/2 - mSpritesheet->getOriginalBounds().getWidth()/2, getWindowHeight()/2 - mSpritesheet->getOriginalBounds().getHeight()/2);
 	mSpritesheetAnimation->draw();
+	gl::popModelView();
 }
 
 CINDER_APP( SpritesheetAnimationApp, RendererGl )
