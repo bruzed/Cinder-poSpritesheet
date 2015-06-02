@@ -68,6 +68,9 @@ namespace po {
 		//	Draw frame number
 		void drawFrame(int frameNum);
 		
+		//	Draw frame name
+		void drawFrame(std::string frameName);
+		
 	protected:
 		Spritesheet();
 		
