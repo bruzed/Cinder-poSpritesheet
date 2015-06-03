@@ -1,6 +1,6 @@
 #Cinder-poSpritesheet
 
-[Potion's](http://www.potiondesign.com) spritesheet block for [Cinder](http://libcinder.org).
+[Potion's](http://www.potiondesign.com) spritesheet block for [Cinder](http://libcinder.org). Cinder-poSpritesheet is released under the [BSD New License](./License).
 
 The block consists of two classes:
 
@@ -44,7 +44,7 @@ mSpritesheet->drawFrame("0031.png");
 
 To animate the spritesheet:
 
-```
+```C++
 gl::TextureRef texture = gl::Texture::create(loadImage(loadAsset("charge.png")));
 JsonTree json = JsonTree(loadAsset("charge.json"));
 	

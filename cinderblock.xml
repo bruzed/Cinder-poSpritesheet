@@ -5,9 +5,9 @@
 		id="com.potiondesign.spritesheet"
 		git="git://github.com/Potion/Cinder-poSpritesheet.git"
 		author="Potion Design LLC"
-		summary="Potion's spritesheet block for Cinder"
-		license="modbsd"
-		version="0.1"
+		summary="Potion's spritesheet block for Cinder."
+		license="BSD New"
+		version="1.0"
 		url="http://www.potiondesign.com"
 		>
 
@@ -16,6 +16,7 @@
 
 		<header>src/poSpritesheet/poSpritesheet.h</header>
 		<source>src/poSpritesheet/poSpritesheet.cpp</source>
+		
 		<header>src/poSpritesheet/poSpritesheetAnimation.h</header>
 		<source>src/poSpritesheet/poSpritesheetAnimation.cpp</source>
 
